@@ -98,7 +98,23 @@ describe('AndroidInterface', function(){
 			AI.dispatch(1, true);
 			expect(test).to.equal(true);
 			expect(testArg).to.equal(true);
+			// once
+			AI.dispatch(1, "hello");
+			expect(testArg).to.equal(true);
 		});
+
+		it('execute no once', function(){
+			var test = false,
+					testArg = false;
+			mockGetTimestamp(AI, 1);
+
+			AI.registerCallback(function(arg){ test = true; testArg = arg; }, {once : false});
+			expect(Object.keys(AI.callbacks).length).to.equal(1);				
+			AI.dispatch(1, "one");
+			expect(testArg).to.equal("one");
+			AI.dispatch(1, "two");
+			expect(testArg).to.equal("two");
+		})
 	});
 
 
