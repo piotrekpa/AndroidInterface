@@ -1,5 +1,6 @@
-package pl.omomom;
+package pl.piotrpardel.android;
 
+import org.json.JSONArray;
 import android.webkit.WebView;
 
 public abstract class JavascriptInterfaceAbstract {
@@ -16,5 +17,9 @@ public abstract class JavascriptInterfaceAbstract {
 	
 	protected void runCallback(String callback){
 		this.webview.loadUrl("javascript:"+ this.dispatcherName +"(" + callback + ");");
+	}
+	
+	protected void runCallback(String callback, JSONArray args){
+		this.webview.loadUrl("javascript:"+ this.dispatcherName +"(" + callback + ", " + args.toString() + ");");
 	}
 }
