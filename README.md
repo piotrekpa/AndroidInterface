@@ -1,12 +1,12 @@
 # Android Interface #
 
-AndroidInterface enables you to execute methods from Android JavascriptInterface as asynchronous method - by callback. This works only in android webview.
+AndroidInterface allows you to execute methods from Android JavascriptInterface as asynchronous method - by callback. This works only in android webview.
 
 ## How to use ##
 
 ### In Android side ###
 
-Create class, which inherits for the JavascriptInterfaceAbstract from android/JavascriptInterfaceAbstract.java file.
+Create class, which inherits from the JavascriptInterfaceAbstract from android/JavascriptInterfaceAbstract.java file.
 
 	public class FooJSInterface extends JavascriptInterfaceAbstract {
 	
@@ -14,7 +14,7 @@ Create class, which inherits for the JavascriptInterfaceAbstract from android/Ja
 
 Implement your methods.
 Remeber that this method:
-*	must be of a void type,
+* must be of a void type,
 * the last argument must be a string variable - this is the callback,
 * returns results by executing this.runCallback(String callback, JSONArray results) method. The result is an optional argument
 
@@ -53,7 +53,7 @@ run
 
 	AndroidInterface(window, "AI", "Android", ["bar"]),
 
-when:
+where:
 * window is a global context
 * AI is the name of this interface - now you have a global access to the interface like `AI.bar`
 * Android is an original name of the interface, which you set in addJavascriptInterface method
