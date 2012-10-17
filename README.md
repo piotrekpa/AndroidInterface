@@ -16,7 +16,7 @@ Implement your methods.
 Remeber that this method:
 *	must be of a void type,
 * the last argument must be a string variable - this is the callback,
-* returns results by executing this.runCallback(String callback, JSONArray results) method. The result is an optional argument;
+* returns results by executing this.runCallback(String callback, JSONArray results) method. The result is an optional argument
 
 
 	import org.json.JSONArray;
