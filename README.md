@@ -9,7 +9,7 @@ AndroidInterface enables you to execute methods from Android JavascriptInterface
 Create class, which inherits for the JavascriptInterfaceAbstract from android/JavascriptInterfaceAbstract.java file.
 
 	public class FooJSInterface extends JavascriptInterfaceAbstract {
-
+	
 	}
 
 Implement your methods.
@@ -18,15 +18,15 @@ Remeber that this method:
 * the last argument must be a string variable - this is the callback,
 * returns results by executing this.runCallback(String callback, JSONArray results) method. The result is an optional argument
 
-
+	```
 	import org.json.JSONArray;
 	import android.webkit.WebView;
 	public class FooJSInterface extends JavascriptInterfaceAbstract {
-
+		
 		public SomeJSInterface(WebView web){
 			super(web);
 		}
-	
+		
 		public void bar(String callback){
 			JSONArray result;
 			// block of code
@@ -36,8 +36,9 @@ Remeber that this method:
 			result.put(true);
 			this.runCallback(callback, result);
 		}
-
+		
 	}
+	```
 
 Add to your webView in activity. For example:
 
