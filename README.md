@@ -18,6 +18,7 @@ Remeber that this method:
 * the last argument must be a string variable - this is the callback,
 * returns results by executing this.runCallback(String callback, JSONArray results) method. The result is an optional argument;
 
+
 	import org.json.JSONArray;
 	import android.webkit.WebView;
 	public class FooJSInterface extends JavascriptInterfaceAbstract {
